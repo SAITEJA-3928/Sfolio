@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  /* White light background */
+  --color-background: hsl(0 0% 98%);
+  --color-foreground: hsl(220 25% 10%);
+
+  /* Primary: Emerald green */
+  --color-primary: hsl(152 69% 35%);
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  /* Gold / amber accent */
+  --color-accent: hsl(38 92% 50%);
+  --color-accent-foreground: hsl(0 0% 10%);
+
+  /* Cards: white with subtle shadow */
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(220 25% 10%);
+
+  /* Borders: soft gray */
+  --color-border: hsl(220 13% 90%);
+  --color-input: hsl(220 13% 90%);
+  --color-ring: hsl(152 69% 35%);
+
+  /* Muted */
+  --color-muted: hsl(220 14% 96%);
+  --color-muted-foreground: hsl(220 9% 46%);
+
+  /* Secondary: gold tint */
+  --color-secondary: hsl(38 92% 95%);
+  --color-secondary-foreground: hsl(38 80% 28%);
+
+  /* Sidebar: white with green tint border */
+  --color-sidebar: hsl(0 0% 100%);
+  --color-sidebar-foreground: hsl(220 25% 10%);
+  --color-sidebar-border: hsl(220 13% 90%);
+  --color-sidebar-primary: hsl(152 69% 35%);
+  --color-sidebar-primary-foreground: hsl(0 0% 100%);
+  --color-sidebar-accent: hsl(152 69% 96%);
+  --color-sidebar-accent-foreground: hsl(152 69% 25%);
+  --color-sidebar-ring: hsl(152 69% 35%);
+
+  /* Destructive */
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+
+  /* Success */
+  --color-success: hsl(152 69% 35%);
+  --color-success-foreground: hsl(0 0% 100%);
+
+  /* Chart palette: green shades + gold */
+  --color-chart-1: hsl(152 69% 35%);
+  --color-chart-2: hsl(38 92% 50%);
+  --color-chart-3: hsl(152 55% 55%);
+  --color-chart-4: hsl(38 92% 70%);
+  --color-chart-5: hsl(152 30% 75%);
+
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(220 25% 10%);
+  
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(220 14% 96%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(220 13% 80%);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(152 69% 35%);
+  }
+
+  /* Mobile responsive base styles */
+  @media (max-width: 1023px) {
+    html {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    body {
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+    }
+    button, [role="button"], a:not(.checkbox), input[type="checkbox"] {
+      touch-action: manipulation;
+    }
+  }
+
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-xl border border-border shadow-sm;
+  }
+  .text-gradient-green {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(152,69%,35%)] to-[hsl(152,55%,55%)];
+  }
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(38,92%,45%)] to-[hsl(38,92%,65%)];
+  }
+  .sidebar-active {
+    background: linear-gradient(135deg, hsl(152 69% 35% / 0.12), hsl(38 92% 50% / 0.08));
+    color: hsl(152 69% 28%);
+  }
+  .table-head-sticky {
+    @apply text-sm text-muted-foreground shadow-sm;
+  }
+  .table-head-sticky th {
+    @apply sticky top-0 z-10 bg-muted;
+  }
+  .table-head-sticky tr:nth-child(2) th {
+    @apply top-9;
+  }
+}
+
+table :is(a, button, [role="button"], [role="checkbox"]) {
+  cursor: pointer;
+}
+
+table :is(button, [role="button"], [role="checkbox"]):disabled {
+  cursor: not-allowed;
+}
+.lucide {
+  color: #064e3b; /* dark green */
+}

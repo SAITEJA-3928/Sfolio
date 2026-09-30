@@ -1,0 +1,41 @@
+# Vite/React Webapp (.gitignore)
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build
+dist/
+dist-ssr
+*.local
+.env*
+.vite/
+
+# Testing
+coverage/
+*.lcov
+.nyc_output
+
+# IDEs and OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+Thumbs.db
+
+

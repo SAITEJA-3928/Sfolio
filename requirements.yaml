@@ -1,0 +1,19 @@
+packages:
+  "recharts": "For premium data visualization and charts"
+  "framer-motion": "For fluid page transitions and micro-interactions"
+  "date-fns": "For elegant date formatting"
+  "clsx": "For dynamic class merging"
+  "tailwind-merge": "For resolving tailwind class conflicts safely"
+  "@radix-ui/react-dialog": "For accessible modals and wizards"
+  "@radix-ui/react-slot": "For UI component composition"
+  "@radix-ui/react-toast": "For elegant notification toasts"
+
+images:
+  - path: "artifacts/gfolio-admin/public/images/auth-bg.png"
+    description: "Abstract 3D golden and dark amber mesh gradient on a pitch black background, premium fintech style, highly detailed"
+    aspect_ratio: "16:9"
+
+notes:
+  - App is fully dark mode based on Gfolio.in branding.
+  - Using provided API hooks from @workspace/api-client-react.
+  - Mock data is injected as fallbacks to ensure the UI looks pristine even if API endpoints return 404s.

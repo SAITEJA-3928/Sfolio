@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Gfolio Admin & Corporate Portal"
+version = "1.0.0"
+id = "artifacts/gfolio-admin"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24501
+
+[services.development]
+run = "pnpm --filter @workspace/gfolio-admin run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/gfolio-admin", "run", "build" ]
+publicDir = "artifacts/gfolio-admin/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24501"
+BASE_PATH = "/"
